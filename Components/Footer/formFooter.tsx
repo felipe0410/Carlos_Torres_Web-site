@@ -1,0 +1,186 @@
+"use client";
+import React, { useState } from "react";
+import TextField from "@mui/material/TextField";
+import Checkbox from "@mui/material/Checkbox";
+import Button from "@mui/material/Button";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import { Box, FormControl, InputBase, Typography } from "@mui/material";
+import CircularProgress from "@mui/material/CircularProgress";
+import Link from "next/link";
+
+const FormFooter = () => {
+  const [spinner, setSpinner] = useState(false);
+  const [data, setData] = useState<any>({ Name: "", Message: "" });
+  const [inputs, setInputs] = useState<any>({ Name: false, Message: false });
+  const [isChecked, setIsChecked] = useState(false);
+
+  const fields = [
+    {
+      name: "Nombre",
+      label: "Name",
+      id: "Name",
+      validation: (value: string) => value.length > 3,
+      error: "Name is required.",
+    },
+    // { label: 'Email', id: 'Email', validation: (value: string) => (/\S+@\S+\.\S+/).test(value), error: 'Please enter a valid email address.' },
+    // { label: 'Phone', id: 'Phone', validation: (value: string) => value.length > 8, error: 'Please enter a valid phone number.' },
+  ];
+
+  const sendEmailToSupport = async (e: any) => {
+    e.preventDefault();
+  };
+
+  const handleChangee = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    const setValidation = (isValid: boolean) => {
+      setData((prevValues: any) => ({ ...prevValues, [name]: value }));
+      if (isValid) {
+        setInputs((inputs: any) => ({ ...inputs, [name]: isValid }));
+      } else {
+        setInputs((inputs: any) => ({ ...inputs, [name]: isValid }));
+      }
+    };
+    if (name === "Message") {
+      const isValid = value.length > 4;
+      setValidation(isValid);
+    } else {
+      const isValid =
+        fields.find((field) => field.label === name)?.validation(value) ??
+        false;
+      setValidation(isValid);
+    }
+  };
+
+  const displayError = (field: { id: string | number }) => {
+    return data[field.id].length === 0
+      ? "none"
+      : inputs[field.id]
+      ? "none"
+      : "block";
+  };
+
+  const displayMessage = (value: string) => {
+    const validation = (valuee: string) => valuee.length > 4;
+    return value.length === 0 ? "none" : validation(value) ? "none" : "block";
+  };
+  const handleCheckboxChange = (event: any) => {
+    setIsChecked(event.target.checked);
+  };
+
+  return (
+    <FormControl
+      sx={{ width: { xs: "65%", lg: "100%" } }}
+      style={{
+        marginTop: "30px",
+        borderRadius: "40px",
+        background:
+          "linear-gradient(180deg, #205C96 0%, rgba(32, 92, 150, 0.00) 100%)",
+        boxShadow:
+          "0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
+        padding: "20px",
+        marginBottom: "30px",
+      }}
+    >
+      {fields.map((field, i) => (
+        <Box key={i * 10}>
+          <Typography
+            align="left"
+            sx={{
+              padding: "10px",
+              color: "#FFF",
+              fontFamily: "ClementePDai",
+              fontSize: "30px",
+              fontStyle: "normal",
+              fontWeight: 600,
+              lineHeight: "normal",
+              textAlign: "left",
+              marginBottom: "10px",
+            }}
+          >
+            {field.name}
+          </Typography>
+          <InputBase
+            sx={{
+              padding: "5px 20px",
+              borderRadius: "50px",
+              background: "#D9D9D9",
+              boxShadow:
+                "0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
+            }}
+            name={field.id}
+            onChange={handleChangee}
+            placeholder={"Juan Ochoa"}
+            fullWidth
+          />
+          <Typography display={displayError(field)} color="error">
+            {field.error}
+          </Typography>
+        </Box>
+      ))}
+      <Typography
+        align="left"
+        sx={{
+          padding: "10px",
+          color: "#FFF",
+          fontFamily: "ClementePDai",
+          fontSize: "30px",
+          fontStyle: "normal",
+          fontWeight: 600,
+          lineHeight: "normal",
+          textAlign: "left",
+          marginTop: "5px",
+        }}
+      >
+        Mensaje
+      </Typography>
+
+      <InputBase
+        sx={{
+          marginTop: "5%",
+          padding: "10px 20px",
+          borderRadius: "30px",
+          background: "#D9D9D9",
+          boxShadow:
+            "0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
+        }}
+        name="Message"
+        onChange={handleChangee}
+        placeholder="Mensaje....."
+        multiline
+        rows={4}
+        fullWidth
+      />
+      <Button
+        onClick={sendEmailToSupport}
+        disabled={
+          Object.values(inputs).includes(false) === false ? false : true
+        }
+        variant="contained"
+        sx={{
+          marginTop: "20px",
+          borderRadius: "10px",
+          background: "#1C3449",
+          boxShadow: "0px 24px 34px 0px rgba(32, 70, 100, 0.10)",
+          width: "40%",
+          alignSelf: "center",
+        }}
+      >
+        {spinner ? (
+          <CircularProgress
+            sx={{
+              color: "#fff",
+              maxWidth: "27px",
+              maxHeight: "27px",
+              width: "30px",
+              height: "30px",
+            }}
+          />
+        ) : (
+          "Enviar"
+        )}
+      </Button>
+    </FormControl>
+  );
+};
+
+export default FormFooter;
