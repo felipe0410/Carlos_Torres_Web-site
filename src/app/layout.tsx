@@ -19,7 +19,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body style={{ margin: "0" }}>
-        <Box sx={{ position: "fixed", width: "100%" }} id="Content Header">
+        <Box
+          sx={{
+            position: "fixed",
+            width: "100%",
+            background: "#3F659C",
+            zIndex: 1,
+          }}
+          id="Content Header"
+        >
           <Header />
         </Box>
         {children}

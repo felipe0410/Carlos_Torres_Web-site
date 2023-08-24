@@ -5,27 +5,26 @@ export default function Home() {
     <main>
       <Box>
         <Box sx={{ width: "100%" }} component={"img"} src="/background.png" />
-        <Box
-          sx={{
-            width: "100%",
-            height: "38px",
-            background: "#3F659C",
-            marginTop: "-0.5%",
-          }}
-        />
-        <Box
-          sx={{ position: "absolute", left: "40%", top: "45%" }}
-          id="AvatarConatiner"
-        >
-          <Avatar
-            sx={{ minWidth: "318px", height: "100%", background: "#fff" }}
-            src="/Carlos Torres.svg"
-          />
+
+        <Box sx={{ marginTop: "-0.5%", display: "flex", alignItems: "center" }}>
           <Box
-            sx={{ display: "flex", margin: "25px auto" }}
-            component={"img"}
-            src="/row.svg"
+            sx={{
+              width: "100%",
+              height: "38px",
+              background: "#3F659C",
+            }}
           />
+          <Box sx={{ position: "absolute", left: "40%" }} id="AvatarConatiner">
+            <Avatar
+              sx={{ minWidth: "318px", height: "100%", background: "#fff" }}
+              src="/Carlos Torres.svg"
+            />
+            <Box
+              sx={{ display: "flex", margin: "25px auto" }}
+              component={"img"}
+              src="/row.svg"
+            />
+          </Box>
         </Box>
         <Box
           sx={{

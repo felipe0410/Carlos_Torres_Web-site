@@ -1,12 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import TextField from "@mui/material/TextField";
-import Checkbox from "@mui/material/Checkbox";
 import Button from "@mui/material/Button";
-import FormControlLabel from "@mui/material/FormControlLabel";
 import { Box, FormControl, InputBase, Typography } from "@mui/material";
 import CircularProgress from "@mui/material/CircularProgress";
-import Link from "next/link";
 
 const FormFooter = () => {
   const [spinner, setSpinner] = useState(false);
@@ -59,14 +55,6 @@ const FormFooter = () => {
       : "block";
   };
 
-  const displayMessage = (value: string) => {
-    const validation = (valuee: string) => valuee.length > 4;
-    return value.length === 0 ? "none" : validation(value) ? "none" : "block";
-  };
-  const handleCheckboxChange = (event: any) => {
-    setIsChecked(event.target.checked);
-  };
-
   return (
     <FormControl
       sx={{ width: { xs: "65%", lg: "100%" } }}
@@ -103,7 +91,7 @@ const FormFooter = () => {
             sx={{
               padding: "5px 20px",
               borderRadius: "50px",
-              background: "#D9D9D9",
+              background: "#FFF",
               boxShadow:
                 "0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
             }}
@@ -139,7 +127,7 @@ const FormFooter = () => {
           marginTop: "5%",
           padding: "10px 20px",
           borderRadius: "30px",
-          background: "#D9D9D9",
+          background: "#FFF",
           boxShadow:
             "0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
         }}
