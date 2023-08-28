@@ -1,6 +1,44 @@
 import { Avatar, Box, Typography, Button } from "@mui/material";
 
 export default function Home() {
+  // xs:string,sm:string,md:string,lg:string
+  const button = () => {
+    return (
+      <Button
+        sx={{
+          width: "56%",
+          marginTop: "50px",
+          borderRadius: "40px",
+          background: "rgba(245, 237, 70, 0.83)",
+          boxshadow:
+            "0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
+        }}
+      >
+        <Typography
+          sx={{
+            paddingLeft: "20px",
+            color: "#071F37",
+            textAlign: "justify",
+            fontFamily: "ClementePDaj",
+            fontSize: { xs: "11px", sm: "18px", md: "25px", lg: "32px" },
+            fontStyle: "italic",
+            fontWeight: 400,
+            lineHeight: "normal",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          CONOCE MI BIOGRAFÍA AQUÍ
+          <Box
+            sx={{ marginLeft: "20px", padding: "10px 20px" }}
+            component={"img"}
+            src="/Click.svg"
+          />
+        </Typography>
+      </Button>
+    );
+  };
   return (
     <main>
       <Box>
@@ -16,11 +54,12 @@ export default function Home() {
           />
           <Box sx={{ position: "absolute", left: "40%" }} id="AvatarConatiner">
             <Avatar
-              sx={{ minWidth: "318px", height: "100%", background: "#fff" }}
+              sx={{ minWidth: "23vw", height: "100%", background: "#fff" }}
               src="/Carlos Torres.svg"
             />
             <Box
-              sx={{ display: "flex", margin: "25px auto" }}
+              display={{ xs: "none", lg: "flex" }}
+              sx={{ margin: "25px auto" }}
               component={"img"}
               src="/row.svg"
             />
@@ -31,16 +70,18 @@ export default function Home() {
             textAlign: "center",
             marginTop: "15%",
             background: 'url("/backgroundCircle.svg")',
-            backgroundSize: "133%",
-            backgroundPosition: "50% 70%",
-            aspectRatio: "1/1",
+            backgroundSize: "90%",
+            backgroundPosition: "center",
+            aspectRatio: "9/6",
+            backgroundRepeat: "no-repeat",
           }}
         >
           <Typography
             sx={{
+              fontStyle: "italic",
               color: "#205C96",
               fontFamily: "ClementePDal",
-              fontSize: "40px",
+              fontSize: { xs: "16px", sm: "25px", md: "35px", lg: "40px" },
               fontWeight: 600,
               lineHeight: "normal",
             }}
@@ -65,7 +106,7 @@ export default function Home() {
                 color: "#071F37",
                 textAlign: "justify",
                 fontFamily: "ClementePDai",
-                fontSize: "32px",
+                fontSize: { xs: "12px", sm: "20px", md: "25px", lg: "32px" },
                 fontStyle: "normal",
                 fontWeight: 400,
                 lineHeight: "normal",
@@ -77,40 +118,13 @@ export default function Home() {
               esposo, hijo, hermano y un gran amigo.
             </Typography>
           </Box>
-          <Button
-            sx={{
-              marginTop: "50px",
-              borderRadius: "40px",
-              background: "rgba(245, 237, 70, 0.83)",
-              boxshadow:
-                "0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
-            }}
-          >
-            <Typography
-              sx={{
-                paddingLeft: "20px",
-                color: "#071F37",
-                textAlign: "justify",
-                fontFamily: "ClementePDaj",
-                fontSize: "32px",
-                fontStyle: "italic",
-                fontWeight: 400,
-                lineHeight: "normal",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              CONOCE MI BIOGRAFÍA AQUÍ
-              <Box
-                sx={{ marginLeft: "20px", padding: "10px 20px" }}
-                component={"img"}
-                src="/Click.svg"
-              />
-            </Typography>
-          </Button>
+          {button()}
           <Box sx={{ display: "flex", width: "90%", margin: "0 auto" }}>
-            <Box component={"img"} src="/Carlos2.png" />
+            <Box
+              sx={{ width: { xs: "43%", md: "100%" }, height: "100%" }}
+              component={"img"}
+              src="/Carlos2.png"
+            />
             <Box
               sx={{
                 display: "flex",
@@ -123,7 +137,7 @@ export default function Home() {
                   color: "#205C96",
                   textAlign: "justify",
                   fontFamily: "ClementePDap",
-                  fontSize: "48px",
+                  fontSize: { xs: "15px", sm: "27px", md: "40px", lg: "48px" },
                   fontStyle: "italic",
                   fontWeight: 900,
                   lineHeight: "normal",
@@ -138,7 +152,7 @@ export default function Home() {
                   color: "#071F37",
                   textAlign: "justify",
                   fontFamily: "ClementePDag",
-                  fontSize: "36px",
+                  fontSize: { xs: "13px", sm: "21px", md: "29px", lg: "36px" },
                   fontStyle: "normal",
                   fontWeight: 400,
                   lineHeight: "normal",
@@ -152,37 +166,7 @@ export default function Home() {
                 tiene todo para ser uno de los lugares más prósperos de
                 Colombia!
               </Typography>
-              <Button
-                sx={{
-                  borderRadius: "40px",
-                  background: "rgba(245, 237, 70, 0.83)",
-                  boxshadow:
-                    "0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
-                }}
-              >
-                <Typography
-                  sx={{
-                    paddingLeft: "20px",
-                    color: "#071F37",
-                    textAlign: "justify",
-                    fontFamily: "ClementePDaj",
-                    fontSize: "32px",
-                    fontStyle: "italic",
-                    fontWeight: 400,
-                    lineHeight: "normal",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  CONOCE MIS PROPUESTAS AQUÍ
-                  <Box
-                    sx={{ marginLeft: "20px", padding: "10px 20px" }}
-                    component={"img"}
-                    src="/Click.svg"
-                  />
-                </Typography>
-              </Button>
+              {button()}
             </Box>
           </Box>
         </Box>

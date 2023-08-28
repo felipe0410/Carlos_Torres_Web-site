@@ -10,51 +10,67 @@ const Header = () => {
   ];
 
   return (
-    <Box width={"80%"} sx={{ margin: "20px auto", background: "#3F659C" }}>
-      <Box display={"flex"} sx={{ justifyContent: "space-around" }}>
-        {sectionsHeader.map((section) => (
-          <Box key={section.name}>
-            <Button
-              sx={{
-                borderRadius: "40px",
-                background: section.name === "Inicio" ? "#009ADA" : "",
-                boxShadow:
-                  section.name === "Inicio"
-                    ? "0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)"
-                    : "",
-                padding: "5px 20px",
-              }}
-            >
-              <Typography
+    <Box width={"95%"} sx={{ margin: "20px auto", background: "#3F659C" }}>
+      <Box
+        display={"flex"}
+        sx={{ justifyContent: { xs: "center", lg: "space-between" } }}
+      >
+        <Box>
+          <Box
+            display={{ xs: "none", lg: "block" }}
+            component={"img"}
+            src="/logoHeader.svg"
+          />
+        </Box>
+        <Box display={"flex"} sx={{ alignItems: "center" }}>
+          {sectionsHeader.map((section) => (
+            <Box key={section.name}>
+              <Button
                 sx={{
-                  color: "#FFF",
-                  fontFamily: "ClementePDai",
-                  fontSize: "30px",
-                  fontWeight: 400,
-                  lineHeight: "36px",
-                  letterSpacing: "0em",
-                  textAlign: "left",
+                  borderRadius: "40px",
+                  background: section.name === "Inicio" ? "#009ADA" : "",
+                  boxShadow:
+                    section.name === "Inicio"
+                      ? "0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)"
+                      : "",
+                  padding: "5px 20px",
                 }}
               >
-                <Link
-                  style={{
-                    textDecoration: "none",
+                <Typography
+                  sx={{
                     color: "#FFF",
                     fontFamily: "ClementePDai",
-                    fontSize: "30px",
+                    fontSize: {
+                      xs: "14px",
+                      sm: "20px",
+                      md: "25px",
+                      lg: "30px",
+                    },
                     fontWeight: 400,
                     lineHeight: "36px",
                     letterSpacing: "0em",
                     textAlign: "left",
                   }}
-                  href={section.patch}
                 >
-                  {section.name}
-                </Link>
-              </Typography>
-            </Button>
-          </Box>
-        ))}
+                  <Link
+                    style={{
+                      textDecoration: "none",
+                      color: "#FFF",
+                      fontFamily: "ClementePDai",
+                      fontWeight: 400,
+                      lineHeight: "36px",
+                      letterSpacing: "0em",
+                      textAlign: "left",
+                    }}
+                    href={section.patch}
+                  >
+                    {section.name}
+                  </Link>
+                </Typography>
+              </Button>
+            </Box>
+          ))}
+        </Box>
       </Box>
     </Box>
   );
