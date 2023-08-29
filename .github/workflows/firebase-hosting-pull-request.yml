@@ -31,4 +31,3 @@ jobs:
           firebaseServiceAccount: "${{ secrets.FIREBASE_CARLOSTORRES_HOSTING_DEPLOYMENT }}"
           projectId: carlostorres-3eed5
 
-
