@@ -57,7 +57,8 @@ const FormFooter = () => {
 
   return (
     <FormControl
-      sx={{ width: { xs: "65%", lg: "100%" } }}
+      id="FormControl"
+      sx={{ width: "112%" }}
       style={{
         marginTop: "30px",
         borderRadius: "40px",
@@ -77,7 +78,7 @@ const FormFooter = () => {
               padding: "10px",
               color: "#FFF",
               fontFamily: "ClementePDai",
-              fontSize: "30px",
+              fontSize: { xs: "12px", md: "30px" },
               fontStyle: "normal",
               fontWeight: 600,
               lineHeight: "normal",
@@ -92,6 +93,7 @@ const FormFooter = () => {
               padding: "5px 20px",
               borderRadius: "50px",
               background: "#FFF",
+              fontSize: { xs: "12px", md: "30px" },
               boxShadow:
                 "0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
             }}
@@ -111,7 +113,7 @@ const FormFooter = () => {
           padding: "10px",
           color: "#FFF",
           fontFamily: "ClementePDai",
-          fontSize: "30px",
+          fontSize: { xs: "12px", md: "30px" },
           fontStyle: "normal",
           fontWeight: 600,
           lineHeight: "normal",
@@ -128,6 +130,7 @@ const FormFooter = () => {
           padding: "10px 20px",
           borderRadius: "30px",
           background: "#FFF",
+          fontSize: { xs: "12px", md: "30px" },
           boxShadow:
             "0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
         }}
@@ -151,6 +154,7 @@ const FormFooter = () => {
           boxShadow: "0px 24px 34px 0px rgba(32, 70, 100, 0.10)",
           width: "40%",
           alignSelf: "center",
+          fontSize: { xs: "12px", md: "30px" },
         }}
       >
         {spinner ? (

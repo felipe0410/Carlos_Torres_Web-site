@@ -2,12 +2,12 @@ import { Avatar, Box, Typography, Button } from "@mui/material";
 
 export default function Home() {
   // xs:string,sm:string,md:string,lg:string
-  const button = () => {
+  const button = (xs: string, sm: string, md: string, lg: string) => {
     return (
       <Button
         sx={{
-          width: "56%",
-          marginTop: "50px",
+          width: { xs: xs, sm: sm, md: md, lg: lg },
+          marginTop: { xs: "20px", sm: "50px" },
           borderRadius: "40px",
           background: "rgba(245, 237, 70, 0.83)",
           boxshadow:
@@ -19,7 +19,7 @@ export default function Home() {
             paddingLeft: "20px",
             color: "#071F37",
             textAlign: "justify",
-            fontFamily: "ClementePDaj",
+            fontFamily: "ClementePDai",
             fontSize: { xs: "11px", sm: "18px", md: "25px", lg: "32px" },
             fontStyle: "italic",
             fontWeight: 400,
@@ -31,7 +31,11 @@ export default function Home() {
         >
           CONOCE MI BIOGRAFÍA AQUÍ
           <Box
-            sx={{ marginLeft: "20px", padding: "10px 20px" }}
+            sx={{
+              width: { xs: "7%", sm: "auto" },
+              marginLeft: { xs: "5px", sm: "20px" },
+              padding: { xs: "5px 10px", sm: "10px 20px" },
+            }}
             component={"img"}
             src="/Click.svg"
           />
@@ -118,7 +122,7 @@ export default function Home() {
               esposo, hijo, hermano y un gran amigo.
             </Typography>
           </Box>
-          {button()}
+          {button("70%", "65%", "65%", "56%")}
           <Box sx={{ display: "flex", width: "90%", margin: "0 auto" }}>
             <Box
               sx={{ width: { xs: "43%", md: "100%" }, height: "100%" }}
@@ -166,7 +170,7 @@ export default function Home() {
                 tiene todo para ser uno de los lugares más prósperos de
                 Colombia!
               </Typography>
-              {button()}
+              {button("100%", "100%", "100%", "100%")}
             </Box>
           </Box>
         </Box>

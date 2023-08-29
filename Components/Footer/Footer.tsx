@@ -3,20 +3,24 @@ import { Box, Typography } from "@mui/material";
 import FormFooter from "./formFooter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
+import { usePathname } from "next/navigation";
 
 const Footer = () => {
+  const pathname = usePathname();
+  console.log(pathname);
   return (
     <Box
       sx={{
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        marginTop: "15%",
+        marginTop: pathname === "/" ? "15%" : "0",
       }}
     >
       <Box sx={{ maxWidth: "800px" }}>
         <Typography
           sx={{
+            display: pathname === "/" ? "flex" : "none",
             color: "#205C96",
             textAlign: "center",
             fontFamily: "ClementePDai",
@@ -30,49 +34,65 @@ const Footer = () => {
           escuchar tus opiniones e inquietudes.{" "}
         </Typography>
       </Box>
-      <Box width={{ md: "70%", lg: "45%" }} display={"flex"}>
+      <Box width={"100%"} display={"flex"} flexDirection={"column"}>
         <Box
           id="containerFooter"
           sx={{
             zIndex: "2",
             width: "100%",
-            display: "flex",
-            placeContent: "center",
+            placeContent: "end",
+            alignItems: "flex-end",
+            display: pathname === "/" ? "flex" : "none",
           }}
         >
-          <FormFooter />
           <Box
             sx={{
-              position: "absolute",
-              left: { xs: "63%", lg: "63%" },
-              height: { xs: "20vh", sm: "40vh", md: "70vh", lg: "auto" },
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "flex-end",
+              marginBottom: "10%",
+              width: { xs: "60%", sm: "auto" },
+              marginLeft: { xs: "16%", sm: "auto" },
             }}
-            component={"img"}
-            src="/carlosFooter.svg"
-          />
+          >
+            <FormFooter />
+            <Box>
+              <Typography
+                align="center"
+                sx={{
+                  width: "130%",
+                  color: "#205C96",
+                  textAlign: "center",
+                  fontFamily: "ClementePDar",
+                  fontSize: { xs: "15px", md: "40px" },
+                  fontStyle: "italic",
+                  fontWeight: 400,
+                  lineHeight: "normal",
+                  textShadow:
+                    "1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff",
+                }}
+              >
+                Siguenos en redes sociales
+              </Typography>
+            </Box>
+          </Box>
+          <Box
+            sx={{ width: { xs: "40%", sm: "33%" }, height: "100%", zIndex: 2 }}
+          >
+            <Box
+              sx={{ width: "100%" }}
+              component={"img"}
+              src="/carlosFooter.svg"
+            />
+          </Box>
         </Box>
         <Box
           sx={{
-            position: "absolute",
             width: "100%",
             left: "0%",
-            background: 'url("/backgraundFooter.svg")',
-            backgroundRepeat: "no-repeat",
-            zIndex: "1",
-            backgroundSize: "100%",
-            backgroundPosition: "bottom",
+            zIndex: "3",
           }}
         >
-          <Box
-            sx={{
-              position: "relative",
-              zIndex: 2,
-              opacity: "0%",
-              height: { xs: "20vh", sm: "40vh", md: "70vh", lg: "auto" },
-            }}
-            component={"img"}
-            src="/carlosFooter.svg"
-          />
           <Box
             sx={{
               background: "#1B4388",
@@ -83,12 +103,17 @@ const Footer = () => {
             }}
           >
             <Box sx={{ color: "#FFF", display: "flex" }}>
-              <InstagramIcon sx={{ width: "60px", height: "60px" }} />
+              <InstagramIcon
+                sx={{
+                  width: { xs: "30px", sm: "60px" },
+                  height: { xs: "30px", sm: "60px" },
+                }}
+              />
               <Typography
                 sx={{
                   color: "#FFF",
                   fontFamily: "ClementePDar",
-                  fontSize: "40px",
+                  fontSize: { xs: "12px", md: "40px" },
                   fontStyle: "italic",
                   fontWeight: 400,
                   lineHeight: "normal",
@@ -100,12 +125,17 @@ const Footer = () => {
               </Typography>
             </Box>
             <Box sx={{ color: "#FFF", display: "flex" }}>
-              <FacebookIcon sx={{ width: "60px", height: "60px" }} />
+              <FacebookIcon
+                sx={{
+                  width: { xs: "30px", sm: "60px" },
+                  height: { xs: "30px", sm: "60px" },
+                }}
+              />
               <Typography
                 sx={{
                   color: "#FFF",
                   fontFamily: "ClementePDar",
-                  fontSize: "40px",
+                  fontSize: { xs: "12px", md: "40px" },
                   fontStyle: "italic",
                   fontWeight: 400,
                   lineHeight: "normal",
@@ -118,24 +148,6 @@ const Footer = () => {
             </Box>
           </Box>
         </Box>
-      </Box>
-      <Box sx={{ zIndex: "3" }}>
-        <Typography
-          align="center"
-          sx={{
-            color: "#205C96",
-            textAlign: "center",
-            fontFamily: "ClementePDar",
-            fontSize: "40px",
-            fontStyle: "italic",
-            fontWeight: 400,
-            lineHeight: "normal",
-            textShadow:
-              "1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff",
-          }}
-        >
-          Siguenos en redes sociales
-        </Typography>
       </Box>
     </Box>
   );

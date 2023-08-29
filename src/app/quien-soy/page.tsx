@@ -8,7 +8,7 @@ const AboutMe = () => {
           sx={{
             color: "#071F37",
             fontFamily: "ClementePDai",
-            fontSize: "20px",
+            fontSize: { xs: "10px", lg: "20px" },
             fontStyle: "normal",
             fontWeight: 400,
             lineHeight: "normal",
@@ -21,7 +21,7 @@ const AboutMe = () => {
           sx={{
             color: "#071F37",
             fontFamily: "ClementePDai",
-            fontSize: "16px",
+            fontSize: { xs: "10px", lg: "16px" },
             fontStyle: "normal",
             fontWeight: 400,
             lineHeight: "normal",
@@ -41,7 +41,7 @@ const AboutMe = () => {
             color: "#071F37",
             textAlign: "justify",
             fontFamily: "ClementePDai",
-            fontSize: "20px",
+            fontSize: { xs: "11px", lg: "20px" },
             fontStyle: "normal",
             fontWeight: 400,
             lineHeight: "normal",
@@ -55,12 +55,21 @@ const AboutMe = () => {
   return (
     <Box>
       <Box
+        id="background index"
         sx={{
-          background: 'url("/About Me/Group 24.svg")',
+          background: {
+            xs: `linear-gradient(rgba(255, 255, 255, 0.9), rgba(63, 101, 156, 0.8))`,
+            lg: "none",
+          },
+          backgroundImage: {
+            xs: 'url("/About Me/Group 24.svg")',
+            lg: 'url("/About Me/Group 24.svg")',
+          },
           padding: "7%",
           marginLeft: "auto",
           backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
+          backgroundSize: { xs: "333% 157%", sm: "cover" },
+          backgroundPosition: "19% 30%",
         }}
       >
         <Box
@@ -68,8 +77,8 @@ const AboutMe = () => {
             borderRadius: "40px",
             background: "rgba(63, 101, 156, 0.27)",
             boxshadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
-            padding: "40px 75px",
-            maxWidth: "590px",
+            padding: { xs: "15px 35px", lg: "40px 75px" },
+            maxWidth: { xs: "70%", lg: "60%" },
             marginLeft: "auto",
           }}
         >
@@ -78,7 +87,7 @@ const AboutMe = () => {
               color: "#071F37",
               textAlign: "justify",
               fontFamily: "ClementePDai",
-              fontSize: "36px",
+              fontSize: { xs: "14px", lg: "36px" },
               fontStyle: "normal",
               fontWeight: 400,
               lineHeight: "normal",
@@ -92,7 +101,7 @@ const AboutMe = () => {
               color: "#071F37",
               textAlign: "justify",
               fontFamily: "ClementePDai",
-              fontSize: "16px",
+              fontSize: { xs: "11px", lg: "16px" },
               fontStyle: "normal",
               fontWeight: 400,
               lineHeight: "normal",
@@ -139,8 +148,8 @@ const AboutMe = () => {
             borderRadius: "40px",
             background: "rgba(63, 101, 156, 0.27)",
             boxshadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
-            padding: "40px 75px",
-            maxWidth: "590px",
+            padding: { xs: "15px 35px", lg: "40px 75px" },
+            maxWidth: { xs: "70%", lg: "60%" },
             marginLeft: "auto",
             marginTop: "40px",
           }}
@@ -150,7 +159,7 @@ const AboutMe = () => {
               sx={{
                 color: "#071F37",
                 fontFamily: "ClementePDai",
-                fontSize: "36px",
+                fontSize: { xs: "14px", lg: "36px" },
                 fontStyle: "normal",
                 fontWeight: 400,
                 lineHeight: "normal",
@@ -191,11 +200,13 @@ const AboutMe = () => {
             color: "#071F37",
             textAlign: "center",
             fontFamily: "ClementePDai",
-            fontSize: "48px",
+            fontSize: { xs: "14px", lg: "48px" },
             fontStyle: "normal",
             fontWeight: 400,
             lineHeight: "normal",
             marginBottom: "30px",
+            textShadow:
+              "2px 2px 0 #fff, -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 1px 0 #fff",
           }}
         >
           MI GESTION Y LOGROS EN LA ALCALDIA DE AQUITANIA

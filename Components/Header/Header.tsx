@@ -10,7 +10,13 @@ const Header = () => {
   ];
 
   return (
-    <Box width={"95%"} sx={{ margin: "20px auto", background: "#3F659C" }}>
+    <Box
+      width={"95%"}
+      sx={{
+        margin: { xs: "5px auto ", sm: "20px auto" },
+        background: "#3F659C",
+      }}
+    >
       <Box
         display={"flex"}
         sx={{ justifyContent: { xs: "center", lg: "space-between" } }}
@@ -33,7 +39,7 @@ const Header = () => {
                     section.name === "Inicio"
                       ? "0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)"
                       : "",
-                  padding: "5px 20px",
+                  padding: { xs: "0px 10px", sm: "5px 20px" },
                 }}
               >
                 <Typography
@@ -41,7 +47,7 @@ const Header = () => {
                     color: "#FFF",
                     fontFamily: "ClementePDai",
                     fontSize: {
-                      xs: "14px",
+                      xs: "13px",
                       sm: "20px",
                       md: "25px",
                       lg: "30px",

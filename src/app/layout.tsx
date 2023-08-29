@@ -1,3 +1,4 @@
+import "./../../app.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Header from "../../Components/Header/Header";
@@ -24,13 +25,15 @@ export default function RootLayout({
             position: "fixed",
             width: "100%",
             background: "#3F659C",
-            zIndex: 1,
+            zIndex: 4,
           }}
           id="Content Header"
         >
           <Header />
         </Box>
-        {children}
+        <Box id="container children" sx={{ paddingTop: "7%" }}>
+          {children}
+        </Box>
         <Footer />
       </body>
     </html>
