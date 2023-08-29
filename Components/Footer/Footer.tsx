@@ -4,12 +4,13 @@ import FormFooter from "./formFooter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const Footer = () => {
   const pathname = usePathname();
-  console.log(pathname);
   return (
     <Box
+      id="footer"
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -50,7 +51,7 @@ const Footer = () => {
               display: "flex",
               flexDirection: "column",
               justifyContent: "flex-end",
-              marginBottom: "10%",
+              marginBottom: { xs: "5%", sm: "10%" },
               width: { xs: "60%", sm: "auto" },
               marginLeft: { xs: "16%", sm: "auto" },
             }}
@@ -60,11 +61,11 @@ const Footer = () => {
               <Typography
                 align="center"
                 sx={{
-                  width: "130%",
+                  width: "115%",
                   color: "#205C96",
                   textAlign: "center",
                   fontFamily: "ClementePDar",
-                  fontSize: { xs: "15px", md: "40px" },
+                  fontSize: { xs: "12px", md: "40px" },
                   fontStyle: "italic",
                   fontWeight: 400,
                   lineHeight: "normal",
@@ -77,7 +78,12 @@ const Footer = () => {
             </Box>
           </Box>
           <Box
-            sx={{ width: { xs: "40%", sm: "33%" }, height: "100%", zIndex: 2 }}
+            sx={{
+              width: { xs: "33%", sm: "33%" },
+              height: "100%",
+              zIndex: 2,
+              marginRight: { xs: "", sm: "5%" },
+            }}
           >
             <Box
               sx={{ width: "100%" }}
@@ -102,7 +108,10 @@ const Footer = () => {
               marginTop: "-10px",
             }}
           >
-            <Box sx={{ color: "#FFF", display: "flex" }}>
+            <Link
+              href={"https://www.instagram.com/carlostorresaboyaca/"}
+              style={{ color: "#FFF", display: "flex", textDecoration: "none" }}
+            >
               <InstagramIcon
                 sx={{
                   width: { xs: "30px", sm: "60px" },
@@ -123,16 +132,21 @@ const Footer = () => {
               >
                 CarlosTorresBoyaca
               </Typography>
-            </Box>
-            <Box sx={{ color: "#FFF", display: "flex" }}>
+            </Link>
+            <Link
+              href={"https://www.facebook.com/carlos.e.aguirre.779"}
+              style={{ color: "#FFF", display: "flex", textDecoration: "none" }}
+            >
               <FacebookIcon
                 sx={{
                   width: { xs: "30px", sm: "60px" },
                   height: { xs: "30px", sm: "60px" },
+                  borderRadius: "30px",
                 }}
               />
               <Typography
                 sx={{
+                  textDecoration: "none",
                   color: "#FFF",
                   fontFamily: "ClementePDar",
                   fontSize: { xs: "12px", md: "40px" },
@@ -145,7 +159,7 @@ const Footer = () => {
               >
                 Carlos Ernesto Torres Aguirre
               </Typography>
-            </Box>
+            </Link>
           </Box>
         </Box>
       </Box>

@@ -1,5 +1,7 @@
+"use client";
 import { Box, Grid, Typography } from "@mui/material";
 import { arrayMyProjetc } from "./arrayProjet";
+import Link from "next/link";
 
 const MyProject = () => {
   return (
@@ -11,7 +13,7 @@ const MyProject = () => {
           }}
           sx={{
             position: "absolute",
-            display: "flex",
+            display: { xs: "none", lg: "flex" },
             width: "100%",
             height: "60%",
             justifyContent: "center",
@@ -58,10 +60,11 @@ const MyProject = () => {
               color: "#205C96",
               textAlign: "justify",
               fontFamily: "ClementePDai",
-              fontSize: "48px",
+              fontSize: { xs: "14px", sm: "48px" },
               fontStyle: "italic",
               fontWeight: 900,
               lineHeight: "normal",
+              marginTop: "5%",
             }}
           >
             VISION BOYACÁ SE MUEVE
@@ -72,7 +75,7 @@ const MyProject = () => {
             padding: "30px",
             margin: "0 auto",
             width: "60%",
-            marginTop: "30px",
+            marginTop: { xs: "10px", sm: "30px" },
             borderRadius: "40px",
             background: "rgba(255, 255, 255, 0.60)",
             boxShadow:
@@ -97,11 +100,33 @@ const MyProject = () => {
             potencial y las maravillas que tenemos, ¡Boyacá tiene todo para ser
             uno de los lugares más prósperos de Colombia!
           </Typography>
+          <Link
+            href="#propuestas"
+            scroll={false}
+            passHref
+            onClick={() => {
+              const target = document.querySelector("#propuestas");
+              if (target) {
+                target.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+          >
+            <Box
+              display={{ xs: "none", lg: "flex" }}
+              sx={{ margin: "25px auto" }}
+              component={"img"}
+              src="/myProject/row.svg"
+            />
+          </Link>
         </Box>
-        <Box display={"flex"} sx={{ alignItems: "center" }}>
+        <Box
+          display={"flex"}
+          sx={{ alignItems: "center", marginTop: { xs: "5%", sm: "0" } }}
+        >
           <Box
+            id="propuestas"
             sx={{
-              height: "40px",
+              height: { xs: "20px", sm: "40px" },
               width: "100%",
               borderRadius: "0px 20px 20px 0px",
               background: "#3F659C",
@@ -112,7 +137,7 @@ const MyProject = () => {
               color: "#205C96",
               textAlign: "center",
               fontFamily: "ClementePDai",
-              fontSize: "70px",
+              fontSize: { xs: "16px", sm: "70px" },
               fontStyle: "italic",
               fontWeight: 900,
               lineHeight: "normal",
@@ -125,7 +150,7 @@ const MyProject = () => {
           </Typography>
           <Box
             sx={{
-              height: "40px",
+              height: { xs: "20px", sm: "40px" },
               width: "100%",
               borderRadius: "20px 0px 0px 20px",
               background: "#3F659C",

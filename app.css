@@ -5,6 +5,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "ClementePDar";
+  src: url("/font/ClementePDai/ClementePDar-UltraBoldItali.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   font-family: "ClementePDai", sans-serif;
 }

@@ -1,46 +1,50 @@
+"use client";
 import { Avatar, Box, Typography, Button } from "@mui/material";
+import Link from "next/link";
 
 export default function Home() {
   // xs:string,sm:string,md:string,lg:string
   const button = (xs: string, sm: string, md: string, lg: string) => {
     return (
-      <Button
-        sx={{
-          width: { xs: xs, sm: sm, md: md, lg: lg },
-          marginTop: { xs: "20px", sm: "50px" },
-          borderRadius: "40px",
-          background: "rgba(245, 237, 70, 0.83)",
-          boxshadow:
-            "0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
-        }}
-      >
-        <Typography
+      <Link href="/quien-soy" passHref>
+        <Button
           sx={{
-            paddingLeft: "20px",
-            color: "#071F37",
-            textAlign: "justify",
-            fontFamily: "ClementePDai",
-            fontSize: { xs: "11px", sm: "18px", md: "25px", lg: "32px" },
-            fontStyle: "italic",
-            fontWeight: 400,
-            lineHeight: "normal",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
+            width: { xs: xs, sm: sm, md: md, lg: lg },
+            marginTop: { xs: "20px", sm: "50px" },
+            borderRadius: "40px",
+            background: "rgba(245, 237, 70, 0.83)",
+            boxshadow:
+              "0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
           }}
         >
-          CONOCE MI BIOGRAFÍA AQUÍ
-          <Box
+          <Typography
             sx={{
-              width: { xs: "7%", sm: "auto" },
-              marginLeft: { xs: "5px", sm: "20px" },
-              padding: { xs: "5px 10px", sm: "10px 20px" },
+              paddingLeft: "20px",
+              color: "#071F37",
+              textAlign: "justify",
+              fontFamily: "ClementePDai",
+              fontSize: { xs: "11px", sm: "18px", md: "25px", lg: "32px" },
+              fontStyle: "italic",
+              fontWeight: 400,
+              lineHeight: "normal",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
-            component={"img"}
-            src="/Click.svg"
-          />
-        </Typography>
-      </Button>
+          >
+            CONOCE MI BIOGRAFÍA AQUÍ
+            <Box
+              sx={{
+                width: { xs: "7%", sm: "auto" },
+                marginLeft: { xs: "5px", sm: "20px" },
+                padding: { xs: "5px 10px", sm: "10px 20px" },
+              }}
+              component={"img"}
+              src="/Click.svg"
+            />
+          </Typography>
+        </Button>
+      </Link>
     );
   };
   return (
@@ -48,7 +52,7 @@ export default function Home() {
       <Box>
         <Box sx={{ width: "100%" }} component={"img"} src="/background.png" />
 
-        <Box sx={{ marginTop: "-0.5%", display: "flex", alignItems: "center" }}>
+        <Box sx={{ marginTop: "-2%", display: "flex", alignItems: "center" }}>
           <Box
             sx={{
               width: "100%",
@@ -56,18 +60,31 @@ export default function Home() {
               background: "#3F659C",
             }}
           />
-          <Box sx={{ position: "absolute", left: "40%" }} id="AvatarConatiner">
+          <Link
+            href="#mi-biography"
+            scroll={false}
+            passHref
+            style={{ position: "absolute", left: "40%" }}
+            id="AvatarConatiner"
+            onClick={() => {
+              const target = document.querySelector("#mi-biography");
+              if (target) {
+                target.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+          >
             <Avatar
               sx={{ minWidth: "23vw", height: "100%", background: "#fff" }}
               src="/Carlos Torres.svg"
             />
             <Box
+              id="mi-biography"
               display={{ xs: "none", lg: "flex" }}
               sx={{ margin: "25px auto" }}
               component={"img"}
               src="/row.svg"
             />
-          </Box>
+          </Link>
         </Box>
         <Box
           sx={{

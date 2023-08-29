@@ -1,19 +1,22 @@
+"use client";
 import { Box, Button, Typography } from "@mui/material";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
+  const pathname = usePathname();
   const sectionsHeader = [
     { name: "Inicio", patch: "/" },
     { name: "¿Quien soy?", patch: "/quien-soy" },
     { name: "Mi Proyecto", patch: "/mi-proyecto" },
-    { name: "Hablemos", patch: "/hablemos" },
+    { name: "Hablemos", patch: "/#footer" },
   ];
 
   return (
     <Box
       width={"95%"}
       sx={{
-        margin: { xs: "5px auto ", sm: "20px auto" },
+        margin: { xs: "5px auto ", sm: "7px auto" },
         background: "#3F659C",
       }}
     >
@@ -21,22 +24,25 @@ const Header = () => {
         display={"flex"}
         sx={{ justifyContent: { xs: "center", lg: "space-between" } }}
       >
-        <Box>
+        <Link href={"/"}>
           <Box
             display={{ xs: "none", lg: "block" }}
             component={"img"}
             src="/logoHeader.svg"
           />
-        </Box>
-        <Box display={"flex"} sx={{ alignItems: "center" }}>
+        </Link>
+        <Box
+          display={"flex"}
+          sx={{ alignItems: "center", marginRight: { xs: "0", lg: "5%" } }}
+        >
           {sectionsHeader.map((section) => (
             <Box key={section.name}>
               <Button
                 sx={{
                   borderRadius: "40px",
-                  background: section.name === "Inicio" ? "#009ADA" : "",
+                  background: section.patch === pathname ? "#009ADA" : "",
                   boxShadow:
-                    section.name === "Inicio"
+                    section.patch === pathname
                       ? "0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)"
                       : "",
                   padding: { xs: "0px 10px", sm: "5px 20px" },

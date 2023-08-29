@@ -31,7 +31,7 @@ export default function RootLayout({
         >
           <Header />
         </Box>
-        <Box id="container children" sx={{ paddingTop: "7%" }}>
+        <Box id="container children" sx={{ paddingTop: "6%" }}>
           {children}
         </Box>
         <Footer />

@@ -1,10 +1,20 @@
 "use client";
 import React, { useState } from "react";
 import Button from "@mui/material/Button";
-import { Box, FormControl, InputBase, Typography } from "@mui/material";
+import {
+  Box,
+  FormControl,
+  InputBase,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import CircularProgress from "@mui/material/CircularProgress";
 
 const FormFooter = () => {
+  const theme = useTheme();
+  const matchesSm = useMediaQuery(theme.breakpoints.down("sm"));
+
   const [spinner, setSpinner] = useState(false);
   const [data, setData] = useState<any>({ Name: "", Message: "" });
   const [inputs, setInputs] = useState<any>({ Name: false, Message: false });
@@ -58,16 +68,18 @@ const FormFooter = () => {
   return (
     <FormControl
       id="FormControl"
-      sx={{ width: "112%" }}
+      sx={{
+        width: "112%",
+        padding: { xs: "10px", sm: "20px" },
+        marginBottom: { xs: "8px", sm: "30px" },
+        borderRadius: { xs: "20px", sm: "40px" },
+      }}
       style={{
         marginTop: "30px",
-        borderRadius: "40px",
         background:
           "linear-gradient(180deg, #205C96 0%, rgba(32, 92, 150, 0.00) 100%)",
         boxShadow:
           "0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
-        padding: "20px",
-        marginBottom: "30px",
       }}
     >
       {fields.map((field, i) => (
@@ -75,7 +87,7 @@ const FormFooter = () => {
           <Typography
             align="left"
             sx={{
-              padding: "10px",
+              padding: { xs: "0 10px", sm: "10px" },
               color: "#FFF",
               fontFamily: "ClementePDai",
               fontSize: { xs: "12px", md: "30px" },
@@ -83,7 +95,7 @@ const FormFooter = () => {
               fontWeight: 600,
               lineHeight: "normal",
               textAlign: "left",
-              marginBottom: "10px",
+              marginBottom: { xs: "2px", sm: "10px" },
             }}
           >
             {field.name}
@@ -110,7 +122,7 @@ const FormFooter = () => {
       <Typography
         align="left"
         sx={{
-          padding: "10px",
+          padding: { xs: "0 10px", sm: "10px" },
           color: "#FFF",
           fontFamily: "ClementePDai",
           fontSize: { xs: "12px", md: "30px" },
@@ -126,7 +138,7 @@ const FormFooter = () => {
 
       <InputBase
         sx={{
-          marginTop: "5%",
+          marginTop: { xs: "1%", sm: "5%" },
           padding: "10px 20px",
           borderRadius: "30px",
           background: "#FFF",
@@ -138,7 +150,7 @@ const FormFooter = () => {
         onChange={handleChangee}
         placeholder="Mensaje....."
         multiline
-        rows={4}
+        rows={matchesSm ? 2 : 4}
         fullWidth
       />
       <Button
@@ -148,11 +160,12 @@ const FormFooter = () => {
         }
         variant="contained"
         sx={{
-          marginTop: "20px",
+          marginTop: { xs: "10px", sm: "20px" },
           borderRadius: "10px",
           background: "#1C3449",
           boxShadow: "0px 24px 34px 0px rgba(32, 70, 100, 0.10)",
           width: "40%",
+          padding: { xs: "0 10px", sm: "auto" },
           alignSelf: "center",
           fontSize: { xs: "12px", md: "30px" },
         }}
