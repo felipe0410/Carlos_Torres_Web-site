@@ -50,9 +50,24 @@ export default function Home() {
   return (
     <main>
       <Box>
-        <Box sx={{ width: "100%" }} component={"img"} src="/background.png" />
+        {/* <Box sx={{ width: "100%" }} component={"img"} src="/background.png" /> */}
+        <Box sx={{ background: "rgb(63 101 156 / 94%)", marginTop: "-1%" }}>
+          <video
+            style={{
+              width: "100%",
+              height: "100%",
+              marginTop: "-1%",
+              opacity: "40%",
+            }}
+            loop
+            muted
+            autoPlay
+          >
+            <source src="/videoBackground.mp4" type="video/mp4" />
+          </video>
+        </Box>
 
-        <Box sx={{ marginTop: "-2%", display: "flex", alignItems: "center" }}>
+        <Box sx={{ display: "flex", alignItems: "center" }}>
           <Box
             sx={{
               width: "100%",
