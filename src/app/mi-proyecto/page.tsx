@@ -40,8 +40,8 @@ const MyProject = () => {
         sx={{
           background: 'url("/myProject/projetc.svg")',
           backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundSize: { xs: "contain", md: "120% 120%" },
+          backgroundPosition: { xs: "50% 29%", md: "bottom" },
         }}
       >
         <Box

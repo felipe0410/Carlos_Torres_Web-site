@@ -2,7 +2,6 @@
 import { Box, Typography } from "@mui/material";
 import FormFooter from "./formFooter";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import FacebookIcon from "@mui/icons-material/Facebook";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
@@ -122,11 +121,11 @@ const Footer = () => {
                 sx={{
                   color: "#FFF",
                   fontFamily: "ClementePDar",
-                  fontSize: { xs: "12px", md: "40px" },
+                  fontSize: { xs: "10px", sm: "20px", md: "40px" },
                   fontStyle: "italic",
                   fontWeight: 400,
                   lineHeight: "normal",
-                  marginLeft: "10px",
+                  marginLeft: { xs: "5px", md: "10px" },
                   alignSelf: "center",
                 }}
               >
@@ -137,11 +136,13 @@ const Footer = () => {
               href={"https://www.facebook.com/carlos.e.aguirre.779"}
               style={{ color: "#FFF", display: "flex", textDecoration: "none" }}
             >
-              <FacebookIcon
+              <Box
+                component={"img"}
+                src="/facebookFooter.svg"
+                alt="facebook-footer"
                 sx={{
                   width: { xs: "30px", sm: "60px" },
                   height: { xs: "30px", sm: "60px" },
-                  borderRadius: "30px",
                 }}
               />
               <Typography
@@ -149,11 +150,11 @@ const Footer = () => {
                   textDecoration: "none",
                   color: "#FFF",
                   fontFamily: "ClementePDar",
-                  fontSize: { xs: "12px", md: "40px" },
+                  fontSize: { xs: "10px", sm: "20px", md: "40px" },
                   fontStyle: "italic",
                   fontWeight: 400,
                   lineHeight: "normal",
-                  marginLeft: "10px",
+                  marginLeft: { xs: "5px", md: "10px" },
                   alignSelf: "center",
                 }}
               >

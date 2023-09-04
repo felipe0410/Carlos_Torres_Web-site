@@ -13,6 +13,8 @@ const AboutMe = () => {
             fontWeight: 400,
             lineHeight: "normal",
             marginBottom: "20px",
+            textShadow:
+              "1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff",
           }}
         >
           {title1}
@@ -56,20 +58,22 @@ const AboutMe = () => {
     <Box>
       <Box
         id="background index"
+        style={{
+          backgroundRepeat: "no-repeat",
+        }}
         sx={{
           background: {
             xs: `linear-gradient(rgba(255, 255, 255, 0.9), rgba(63, 101, 156, 0.8))`,
             lg: "none",
           },
           backgroundImage: {
-            xs: 'url("/About Me/Group 24.svg")',
+            xs: 'url("/About Me/aboutMeBackground.svg")',
             lg: 'url("/About Me/Group 24.svg")',
           },
           padding: "7%",
           marginLeft: "auto",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: { xs: "333% 157%", sm: "cover" },
-          backgroundPosition: "19% 30%",
+          backgroundSize: { xs: "140%", sm: "cover" },
+          backgroundPosition: { xs: "auto", sm: "19% 30%" },
         }}
       >
         <Box
@@ -92,6 +96,8 @@ const AboutMe = () => {
               fontWeight: 400,
               lineHeight: "normal",
               marginBottom: "15px",
+              textShadow:
+                "1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff",
             }}
           >
             TE CUENTO UN POCO DE MI VIDA{" "}
@@ -164,6 +170,8 @@ const AboutMe = () => {
                 fontWeight: 400,
                 lineHeight: "normal",
                 marginBottom: "15px",
+                textShadow:
+                  "1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff",
               }}
             >
               FORMACION ACADÉMICA
@@ -188,11 +196,15 @@ const AboutMe = () => {
       <Box sx={{ background: "#3F659C", width: "100%", height: "40px" }} />
       <Box
         sx={{
-          background: 'url("/About Me/backgraund.svg")',
+          background: {
+            xs: 'url("/About Me/backgroundResponsive.svg")',
+            sm: 'url("/About Me/backgraund.svg")',
+          },
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           aspectRatio: "12/15",
           width: "100%",
+          paddingBottom: "50%",
         }}
       >
         <Typography
@@ -207,6 +219,7 @@ const AboutMe = () => {
             marginBottom: "30px",
             textShadow:
               "2px 2px 0 #fff, -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 1px 0 #fff",
+            paddingTop: "5%",
           }}
         >
           MI GESTION Y LOGROS EN LA ALCALDIA DE AQUITANIA
@@ -223,7 +236,7 @@ const AboutMe = () => {
               "0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
           }}
         >
-          <Box sx={{ padding: "30px", width: "40%" }}>
+          <Box sx={{ padding: "3%", width: { xs: "40%", sm: "40%" } }}>
             {textLogros(
               "1. 100 viviendas gratuitas, 77 viviendas rurales, se llevó el servicio de gas natural, infraestructura representada en aulas múltiples (2), centro de integración ciudadana, Restaurantes escolares (2), construcción de placas huella en varios sectores de alta necesidad (Hatolaguna, Salvial, Ahirico, Sisvaca, Maravilla, Mombita); equipamiento municipal Motoniveladora, Volqueta, vehículo compactador de basura; Programas sociales de inclusión, creación del comparendo ambiental."
             )}
@@ -234,7 +247,7 @@ const AboutMe = () => {
               "3. Condecorado por la ANSPE como el mejor alcalde del año 2012 en la superación de la pobreza extrema."
             )}
           </Box>
-          <Box sx={{ padding: "30px", width: "40%" }}>
+          <Box sx={{ padding: "3%", width: "40%" }}>
             {textLogros(
               "4. Condecorado por la secretaria de salud de Boyacá por ser el único municipio del departamento que adelanto el programa de atención integral para la población con diversidad funcional."
             )}

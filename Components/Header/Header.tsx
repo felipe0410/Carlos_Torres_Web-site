@@ -16,7 +16,7 @@ const Header = () => {
     <Box
       width={"95%"}
       sx={{
-        margin: { xs: "5px auto ", sm: "7px auto" },
+        margin: { xs: "3px auto ", sm: "7px auto" },
         background: "#3F659C",
       }}
     >
@@ -53,7 +53,7 @@ const Header = () => {
                     color: "#FFF",
                     fontFamily: "ClementePDai",
                     fontSize: {
-                      xs: "13px",
+                      xs: "12px",
                       sm: "20px",
                       md: "25px",
                       lg: "30px",

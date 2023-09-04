@@ -3,12 +3,12 @@ import { Avatar, Box, Typography, Button } from "@mui/material";
 import Link from "next/link";
 
 export default function Home() {
-  // xs:string,sm:string,md:string,lg:string
   const button = (xs: string, sm: string, md: string, lg: string) => {
     return (
       <Link href="/quien-soy" passHref>
         <Button
           sx={{
+            paddingX: { md: "5%" },
             width: { xs: xs, sm: sm, md: md, lg: lg },
             marginTop: { xs: "20px", sm: "50px" },
             borderRadius: "40px",
@@ -19,11 +19,11 @@ export default function Home() {
         >
           <Typography
             sx={{
-              paddingLeft: "20px",
+              paddingLeft: { md: "20px" },
               color: "#071F37",
               textAlign: "justify",
               fontFamily: "ClementePDai",
-              fontSize: { xs: "11px", sm: "18px", md: "25px", lg: "32px" },
+              fontSize: { xs: "10px", sm: "18px", md: "25px", lg: "32px" },
               fontStyle: "italic",
               fontWeight: 400,
               lineHeight: "normal",
@@ -35,9 +35,9 @@ export default function Home() {
             CONOCE MI BIOGRAFÍA AQUÍ
             <Box
               sx={{
-                width: { xs: "7%", sm: "auto" },
-                marginLeft: { xs: "5px", sm: "20px" },
-                padding: { xs: "5px 10px", sm: "10px 20px" },
+                width: { xs: "7%", md: "auto" },
+                marginLeft: { xs: "5px", md: "20px" },
+                padding: { xs: "px 0px", md: "10px 20px" },
               }}
               component={"img"}
               src="/Click.svg"
@@ -50,7 +50,6 @@ export default function Home() {
   return (
     <main>
       <Box>
-        {/* <Box sx={{ width: "100%" }} component={"img"} src="/background.png" /> */}
         <Box sx={{ background: "rgb(63 101 156 / 94%)", marginTop: "-1%" }}>
           <video
             style={{
@@ -106,9 +105,9 @@ export default function Home() {
             textAlign: "center",
             marginTop: "15%",
             background: 'url("/backgroundCircle.svg")',
-            backgroundSize: "90%",
-            backgroundPosition: "center",
-            aspectRatio: "9/6",
+            backgroundSize: { xs: "165%", md: "120%" },
+            backgroundPosition: { xs: "52% -12vh", md: "bottom" },
+            aspectRatio: { xs: "1/1", md: "1/1" },
             backgroundRepeat: "no-repeat",
           }}
         >
@@ -154,7 +153,7 @@ export default function Home() {
               esposo, hijo, hermano y un gran amigo.
             </Typography>
           </Box>
-          {button("70%", "65%", "65%", "56%")}
+          {button("auto", "auto", "auto", "auto")}
           <Box sx={{ display: "flex", width: "90%", margin: "0 auto" }}>
             <Box
               sx={{ width: { xs: "43%", md: "100%" }, height: "100%" }}
