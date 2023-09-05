@@ -33,7 +33,7 @@ const MyProject = () => {
         <Box
           sx={{ width: "100%" }}
           component={"img"}
-          src="/myProject/background.svg"
+          src="https://firebasestorage.googleapis.com/v0/b/carlostorres-3eed5.appspot.com/o/myProjetc.svg?alt=media&token=d48b7af5-9e26-4391-a87d-64358b6e4efa"
         />
       </Box>
       <Box

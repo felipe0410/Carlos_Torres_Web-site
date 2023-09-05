@@ -1,4 +1,5 @@
 import { Box, Typography } from "@mui/material";
+import CarouselComponent from "./carouselMyProject";
 
 const AboutMe = () => {
   const study = (title1: string, contenc: string) => {
@@ -72,7 +73,7 @@ const AboutMe = () => {
           },
           padding: "7%",
           marginLeft: "auto",
-          backgroundSize: { xs: "140%", sm: "cover" },
+          backgroundSize: { xs: "140%", sm: "120%", lg: "100%" },
           backgroundPosition: { xs: "auto", sm: "19% 30%" },
         }}
       >
@@ -88,6 +89,9 @@ const AboutMe = () => {
         >
           <Typography
             sx={{
+              alignItems: "center",
+              justifyContent: "space-between",
+              display: "flex",
               color: "#071F37",
               textAlign: "justify",
               fontFamily: "ClementePDai",
@@ -101,6 +105,9 @@ const AboutMe = () => {
             }}
           >
             TE CUENTO UN POCO DE MI VIDA{" "}
+            <Box sx={{ width: "15%" }}>
+              <Box sx={{ width: "100%" }} component={"img"} src="/TREE.svg" />
+            </Box>
           </Typography>
           <Typography
             sx={{
@@ -163,6 +170,9 @@ const AboutMe = () => {
           <Box>
             <Typography
               sx={{
+                alignItems: "center",
+                justifyContent: "space-between",
+                display: "flex",
                 color: "#071F37",
                 fontFamily: "ClementePDai",
                 fontSize: { xs: "14px", lg: "36px" },
@@ -175,6 +185,13 @@ const AboutMe = () => {
               }}
             >
               FORMACION ACADÉMICA
+              <Box sx={{ width: "15%" }}>
+                <Box
+                  sx={{ width: "100%" }}
+                  component={"img"}
+                  src="/pencil.svg"
+                />
+              </Box>
             </Typography>
           </Box>
           <Box display={"flex"}>
@@ -195,6 +212,11 @@ const AboutMe = () => {
       </Box>
       <Box sx={{ background: "#3F659C", width: "100%", height: "40px" }} />
       <Box
+        style={{
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "initial",
+        }}
         sx={{
           background: {
             xs: 'url("/About Me/backgroundResponsive.svg")',
@@ -202,9 +224,8 @@ const AboutMe = () => {
           },
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
-          aspectRatio: "12/15",
           width: "100%",
-          paddingBottom: "50%",
+          // paddingBottom: "50%",
         }}
       >
         <Typography
@@ -255,6 +276,18 @@ const AboutMe = () => {
             {textLogros(
               "6. Mi Nombre, el de mi esposa, mi hija, mis padres y el de toda mi familia limpia, salimos con la frente en alto."
             )}
+          </Box>
+        </Box>
+        <Box height={"100%"} sx={{ paddingBottom: "20%", paddingTop: "20%" }}>
+          <Box
+            id="CarouselComponent"
+            sx={{
+              border: "6px solid #009ADA",
+              background: "#3F659C",
+              padding: "5% 0",
+            }}
+          >
+            <CarouselComponent />
           </Box>
         </Box>
       </Box>

@@ -1,6 +1,8 @@
 "use client";
 import { Avatar, Box, Typography, Button } from "@mui/material";
 import Link from "next/link";
+import CarouselComponent from "./index/carousel";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 
 export default function Home() {
   const button = (xs: string, sm: string, md: string, lg: string) => {
@@ -50,7 +52,15 @@ export default function Home() {
   return (
     <main>
       <Box>
-        <Box sx={{ background: "rgb(63 101 156 / 94%)", marginTop: "-1%" }}>
+        <Box
+          sx={{
+            background: "url('/backgroundbanner.svg'),rgb(63 101 156 / 94%)",
+            marginTop: "-1%",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+          }}
+        >
           <video
             style={{
               width: "100%",
@@ -204,6 +214,16 @@ export default function Home() {
               {button("100%", "100%", "100%", "100%")}
             </Box>
           </Box>
+        </Box>
+        <Box
+          id="CarouselComponent"
+          sx={{
+            border: "6px solid #009ADA",
+            background: "#3F659C",
+            padding: "5% 0",
+          }}
+        >
+          <CarouselComponent />
         </Box>
       </Box>
     </main>
