@@ -54,7 +54,7 @@ export default function Home() {
       <Box>
         <Box
           sx={{
-            background: "url('/grupo logos.svg'),rgb(63 101 156 / 94%)",
+            background: "url('/grupo logos.svg'),rgb(63 101 156)",
             marginTop: "-1%",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
@@ -66,7 +66,7 @@ export default function Home() {
               width: "100%",
               height: "100%",
               marginTop: "-1%",
-              opacity: "40%",
+              opacity: "20%",
             }}
             loop
             muted
